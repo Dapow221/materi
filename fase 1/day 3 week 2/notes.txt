@@ -1,0 +1,157 @@
+-- INI COMMENT
+
+/*
+ * 
+*/
+
+create database "SBY_01";
+
+drop database sby_01;
+
+alter database sby_01 rename to "SBY_01";
+
+-- tipe data serial hanya boleh digunakan satu kali
+
+create table if not exists "Instructors" (
+   "id" serial primary key,
+   "name" varchar(50) not null,
+   "discordNitro" boolean default false,
+   "gender" char(1) not null
+);
+
+drop table if exists "Instructors";
+
+--alter table "Instructors" rename to "instruktur;"
+
+alter table "Instructors" add column "email" varchar(100) not unique;
+
+--create students table
+create table if not exists "Students" (
+	"id" serial primary key,
+	"name" varchar(50) not null,
+	"bornYear" integer not null,
+	"gender" char(1) not null,
+	"InstructorsId" integer not null references "Instructors" ("id")
+		on delete cascade
+		on update cascade
+
+);
+
+--- --- --- CRUD -----
+--- CREATE
+/*
+ * 
+ * - primary key itu gaboleh di insert
+ * - double quote - nama database atau nama yang penting penting 
+ * - single quote - merempresentasikan suatu value
+*/
+
+insert into "Instructors" ("name", "discordNitro", "gender", "email")
+values
+	('Jisoo', false, 'F', 'jisso@email.com');
+
+insert into "Students" ("bornYear", "name", "gender", "InstructorsId")
+values
+	(2000, 'Aranaa', "F", 1),
+	(2000, 'Aurel', "F", 1),
+	(2000, 'Mahiraa', "F", 1),
+	(2000, 'Keycaaa', "F", 1),
+	(2000, 'Tiaraa', "F", 1),
+	(2000, 'Cikuy', "F", 1),
+	(2000, 'Amanda', "F", 1)
+returning *;
+
+-- Read data instructor dan studenst
+
+select * from "Instructors" limit 1;
+
+select name, email from "Instructors" where name ilike 'mon%';
+
+select * from "Students" where "bornYear" between 2000 and 2004
+
+-- Update 
+
+update "Instructors" 
+set 
+	name = 'Aranaa cakep',
+	"discordNitro" = true,
+	email = 'aranaacakep@mail.com'
+where id = 1
+returning *;
+
+-- Delete 
+delete from "Instructors" where id = 1
+
+-- all column
+select * from "Instructors";
+select * from "Students";
+
+-- distict
+select distinct gender from "students"
+
+-- some column 
+select "fristName", "lastName" from "Students"
+
+-- column aliass
+select "fristName" as "Nama Student" from "Students"
+
+-- string function: concat, upper, lower
+select concat("fristName", ' ', "lastName") as "Fullname" from "Students";
+select lower("fristName") from "Students";
+
+
+-- string function : (+, -, /, *, %)
+select 1 + 1 as "sum 1 + 1"
+select "fristName", (2023 - "bornYear") as "age" from "Students"
+
+-- math function : round, ceil, floor
+select round(9.7577302527427508754) as "round"
+
+-- where(=, <, >, <=, >=, !=)
+select * from "Students"
+where gender = 'Female';
+select * from "Students"
+where "bornYear" < 2000
+    and "InstructorsId" = 2;
+
+-- where is null
+select * from "Students"
+where "lastName" is not null;
+
+-- where in 
+select * from "Students"
+where "bornYear" in (2000, 3000, 2000)
+
+-- where not in
+select * from "Students"
+where "bornYear" not in (2000, 3000, 2000)
+
+-- where between (inclusif)
+select * from "Students"
+where "bornYear" between 2000 and 2004
+select * from "Students"
+where "joinDate" between '2023-02-01' and '2004-03-01'
+select * from "Students"
+where "joinDate" >= '2023-02-01' and "joinDate" >= '2004-02-01'
+
+
+-- where like / ilike(_, %)
+select * from "Students"
+where "fristName" like 'D%';
+select * from "Students"
+where "fristName" like '%a%';
+select * from "Students"
+where "fristName" ilike '%A%';
+select * from "Students"
+where "fristName" like 'D___';
+
+
+-- date part
+select date_part('year', timestamp '2023-09-13');
+select date_part('century', timestamp '2023-09-13');
+select date_part('decade', timestamp '2023-09-13');
+
+
+
+
+

@@ -1,0 +1,82 @@
+[
+    {
+        "id" : 1,
+        "title" : "Malin Kundang",
+        "genre" : "Myth",
+        "ending" : "Sad",
+        "origin" : "West Sumatra",
+        "estReleaseYear" : 1970
+    },
+    {
+        "id" : 2,
+        "title" : "Sangkuriang",
+        "genre" : "Legend",
+        "ending" : "Sad",
+        "origin" : "West Java",
+        "estReleaseYear" : 1500
+    },
+    {
+        "id" : 3,
+        "title" : "Si Kancil",
+        "genre" : "Fabel",
+        "ending" : "Happy",
+        "origin" : "Java",
+        "estReleaseYear" : 1917
+    },
+    {
+        "id" : 4,
+        "title" : "Keong Mas",
+        "genre" : "Legend",
+        "ending" : "Happy",
+        "origin" : "East Java",
+        "estReleaseYear" : 1986
+    },
+    {
+        "id" : 5,
+        "title" : "Bawang Merah Bawang Putih",
+        "genre" : "Myth",
+        "ending" : "Happy",
+        "origin" : "Riau",
+        "estReleaseYear" : 1900
+    },
+    {
+        "id" : 6,
+        "title" : "Timun Mas",
+        "genre" : "Myth",
+        "ending" : "Happy",
+        "origin" : "Central Java",
+        "estReleaseYear" : 1900
+    },
+    {
+        "id" : 7,
+        "title" : "Si Kabayan",
+        "genre" : "Jokes",
+        "ending" : "Happy",
+        "origin" : "West Java",
+        "estReleaseYear" : 1900
+    },
+    {
+        "id" : 8,
+        "title" : "Asal Mula Danau Toba",
+        "genre" : "Legend",
+        "ending" : "Sad",
+        "origin" : "North Sumatra",
+        "estReleaseYear" : 1000
+    },
+    {
+        "id" : 9,
+        "title" : "Jaka Tarub & 7 Bidadari",
+        "genre" : "Legend",
+        "ending" : "Sad",
+        "origin" : "Central Java",
+        "estReleaseYear" : 1700
+    },
+    {
+        "id" : 10,
+        "title" : "Lutung Kasarung",
+        "genre" : "Legend",
+        "ending" : "Happy",
+        "origin" : "West Java",
+        "estReleaseYear" : 1900
+    }
+]

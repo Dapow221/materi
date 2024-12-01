@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css" id="default-stylesheet"/>
+    <link rel="stylesheet" href="dark-mode.css" id="dark-mode-stylesheet"/>
+    <title>Dapow Games</title>
+</head>
+<body>
+    <div id="app">
+        <div class="summary">
+            <h1 class="title">HASIL MATCH</h1>
+            <h1 class="result"></h1>
+        </div>
+        <div class="games">
+            <div class="option" onclick="pilihOpsi('✋')">✋</div>
+            <div class="option" onclick="pilihOpsi('✌️')">✌️</div>
+            <div class="option" onclick="pilihOpsi('👊')">👊</div>
+        </div>
+        <div class="mode-toggle">
+            <button onclick="toggleDarkMode()">Dark Mode</button>
+            <button onclick="toggleLightMode()">Light Mode</button>
+        </div>
+    </div>
+
+    <script>
+        class Mulai {
+            constructor() {
+                this.namaPemain = "Kamu";
+                this.namaBot = "Aranaa";
+                this.opsiPemain = "";
+                this.pemenang = "";
+            }
+
+            get getOpsiPemain() {
+                return this.opsiPemain;
+            }
+
+            set setOpsiPemain(pilihan) {
+                this.opsiPemain = pilihan;
+            }
+
+            tentukanPemenang(opsiBot) {
+                const opsi = ['✋', '✌️', '👊'];
+                const pilihanBot = opsi[Math.floor(Math.random() * opsi.length)];
+
+                if (this.opsiPemain === pilihanBot) {
+                    this.pemenang = "Hasil seri!";
+                } else if (
+                    (this.opsiPemain === '✋' && pilihanBot === '✌️') ||
+                    (this.opsiPemain === '✌️' && pilihanBot === '👊') ||
+                    (this.opsiPemain === '👊' && pilihanBot === '✋')
+                ) {
+                    this.pemenang = `${this.namaPemain} menang!`;
+                } else {
+                    this.pemenang = `${this.namaBot} menang!`;
+                }
+
+                return pilihanBot;
+            }
+
+            tampilkanHasil(pilihanBot) {
+                const elemenHasil = document.querySelector(".result");
+                elemenHasil.textContent = `${this.namaPemain} memilih ${this.opsiPemain}, ${this.namaBot} memilih ${pilihanBot}. ${this.pemenang}`;
+            }
+        }
+
+        function pilihOpsi(pilihanPemain) {
+            const mulai = new Mulai();
+            mulai.setOpsiPemain = pilihanPemain;
+
+            const pilihanBot = mulai.tentukanPemenang();
+            mulai.tampilkanHasil(pilihanBot);
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.add("dark-mode");
+            body.classList.remove("light-mode");
+        }
+
+        function toggleLightMode() {
+            const body = document.body;
+            body.classList.add("light-mode");
+            body.classList.remove("dark-mode");
+        }
+    </script>
+</body>
+</html>
+   

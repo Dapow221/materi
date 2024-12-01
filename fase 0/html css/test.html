@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priakoffie Website</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="dark-mode.css" id="dark-mode-stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="light-mode">
+    <header>
+        <nav class="container">
+            <div class="logo-box">
+                <a href="https://instagram.com/_dapooow?igshid=NTc4MTIwNjQ2YQ==" target="_blank"><img src="/Users/dapoow/Downloads/IMG-7026.PNG" class="logo" alt="Priakoffie"></a> 
+            </div> 
+            <div class="parent-link">
+                <a href="#" class="social-links">About</a>
+                <a href="#" class="social-links">Projects</a>
+                <a href="#" class="social-links">Experience</a>
+                <a href="#" class="social-links">Contact</a>
+            </div>
+            <div class="icon">
+                <a href="https://www.instagram.com/" target="_blank" class="sm-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://twitter.com/" target="_blank" class="sm-icon"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="https://github.com/" target="_blank" class="sm-icon"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="https://tiktok.com/" target="_blank" class="sm-icon"><ion-icon name="logo-tiktok"></ion-icon></a>
+                <a href="https://youtube.com/" target="_blank" class="sm-icon"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
+        </nav>
+        <div class="header-container">
+            <div class="hdr-container-inner">
+                <h1>Create a Culture Of Coffee</h1>
+                <p><b>Priakoffie</b> Create the environment, contribute, and have a career in the coffee industry.</p>
+                <a href="#" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </header>
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.add("dark-mode");
+            body.classList.remove("light-mode");
+        }
+
+        function toggleLightMode() {
+            const body = document.body;
+            body.classList.add("light-mode");
+            body.classList.remove("dark-mode");
+        }
+    </script>
+</body>
+</html>

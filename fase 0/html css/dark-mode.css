@@ -1,0 +1,45 @@
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+header.dark-mode {
+    background: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)), url(pfp1.png);
+}
+
+.container.dark-mode {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.parent-link.dark-mode, .icon.dark-mode {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.social-links.dark-mode, .msg.dark-mode {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sm-icon.dark-mode {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.logo.dark-mode:hover {
+    opacity: 0.7;
+}
+
+.social-links.dark-mode:hover {
+    opacity: 0.8;
+}
+
+.sm-icon.dark-mode:hover {
+    opacity: 0.8;
+}
+
+.btn.dark-mode {
+    background-color: rgb(199, 0, 0);
+    color: #EAF8FF;
+}
+
+.btn.dark-mode:hover {
+    opacity: 0.8;
+}
